@@ -1,0 +1,35 @@
+
+name: Weekly Report
+on:
+  schedule:
+    - cron: 25 2 * * 6
+
+jobs:
+  create_issue:
+    name: Weekly Report issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue at every monday 10 AM
+        uses: imjohnbo/issue-bot@3daae12aa54d38685d7ff8459fc8a2aee8cea98b
+        with:
+          assignees: "hk2faith@naver.com"
+          labels: "documentation"
+          title: "Weekly Report"
+          body: |
+            ### Agenda
+
+            - [ ] Start the recording
+            - [ ] Check-ins
+            - [ ] Discussion points
+            - [ ] Post the recording
+                    
+            ### Discussion Points
+            Add things to discuss below
+
+            - [Work this week](https://github.com/orgs/github/projects/3)
+          pinned: false
+          close-previous: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
