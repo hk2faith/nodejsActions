@@ -2,7 +2,7 @@
 name: Weekly Report
 on:
   schedule:
-    - cron: 0 8 * * 1
+    - cron: 0/2 * * * *
 
 jobs:
   create_issue:
@@ -11,12 +11,15 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Create issue at every monday 10 AM
         uses: imjohnbo/issue-bot@3daae12aa54d38685d7ff8459fc8a2aee8cea98b
         with:
           assignees: "hk2faith"
           labels: "documentation"
-          title: "Weekly Report"
+          title: Weekly Report ${{ steps.date.outputs.date }}
           body: |
             ### Agenda
 
