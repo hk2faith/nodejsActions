@@ -2,7 +2,7 @@
 name: Weekly Report
 on:
   schedule:
-    - cron: 33 * * * *
+    - cron: 30/2 * * * *
 
 jobs:
   create_issue:
