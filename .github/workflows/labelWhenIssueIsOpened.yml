@@ -7,7 +7,7 @@ on:
       - reopened
       - opened
 jobs:
-  - label_issues:
+  label_issues:
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -17,7 +17,7 @@ jobs:
         with:
           add-labels: "unsolved"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-  - remove_labels:
+  remove_labels:
     runs-on: ubuntu-latest
     permissions:
       issues: write
