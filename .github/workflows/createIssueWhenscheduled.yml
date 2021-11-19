@@ -20,7 +20,7 @@ jobs:
         with:
           assignees: "hk2faith"
           labels: "documentation"
-          title: Weekly Report ${{ steps.date.outputs.date }}
+          title: 'Weekly Report ${{ steps.date.outputs.date }}'
           body: |
             ### Agenda
 
