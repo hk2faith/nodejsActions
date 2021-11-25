@@ -1,4 +1,4 @@
-name: Add comment
+name: Add comment when Qa completed
 on:
   issues:
     types:
@@ -15,4 +15,5 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-          @hk2faith Thanks for QA Complete
+          @hk2faith
+          Thanks for QA Complete
